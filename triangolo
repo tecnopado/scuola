@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#Script x crearea 1 triangolo in CLI usando charset scelto dall utente
+cols=`tput cols`
+start=$((cols/2))
+echo "quante colonne vuoi?"
+read rows
+echo "che caratteri vuoi usare?"
+read char
+
+tput clear
+for((i=0;i<rows;i++))
+do
+cols=$((start-i))
+tput cup $i $cols
+for((j=0;j<=i;j++))
+do
+printf "$char "
+done
