@@ -1,15 +1,15 @@
 #!/bin/sh
 echo "IMMETTI LE DIMENSIONI DEI PIPE CHE FORMANO IL QUADRATO"
-read size
-clear
-for (( i = 1; i <= size; i++ )); do
-    for (( j = 1; j <= size; j++ )); do
+read size #leggo dimensioni impartite da $USER
+clear #lavo la tty
+for (( i = 1; i <= size; i++ )); do #ciclo
+    for (( j = 1; j <= size; j++ )); do #ciclo 
 
         if [ "$i" == 1 ] || [ "$i" == "$size" ] || [ "$j" == 2 ] || [ "$j" == "$size" ]
-         then
+         then #dopo l if in cui dico cosa fare
             #DICHIARIAMO
-            tput cup $i $j
-            echo "|"
-        fi
-     done
-done
+            tput cup $i $j ####QUI LA CAZZATA p-e-n-s-o ,immagino dovrei replicare tput cup sj ed a capo ouput a schermo con echo "_" ####
+            echo "|" #setto il pipe come lato+altezza,MA devo aggiungere "dash" per i lati
+        fi #chiudo l if
+     done #done x il 1o for
+done    #done 2o for
